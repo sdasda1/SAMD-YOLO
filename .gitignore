@@ -1,0 +1,42 @@
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE and environments
+.idea/
+.vscode/
+.venv/
+venv/
+env/
+
+# Local datasets
+datasets/
+data/
+seg_datasets/
+
+# Large model files
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+
+# Training outputs
+runs/
+wandb/
+
+# Compressed archives
+*.zip
+*.7z
+*.tar
+
+# Private configuration
+.env
+.env.*
+!.env.example
+
+# System files
+.DS_Store
+Thumbs.db
