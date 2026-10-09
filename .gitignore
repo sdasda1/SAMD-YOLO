@@ -40,3 +40,4 @@ wandb/
 # System files
 .DS_Store
 Thumbs.db
+/MTL_M5_6/
