@@ -17,7 +17,7 @@ from ultralytics import YOLO
 
 def main():
 
-    print("🔥 SAM-Net 多分辨率 + 多Seed 论文级训练启动")
+    print("🔥 SAMD-YOLO 多分辨率 + 多Seed 论文级训练启动")
 
     # ======================================================
     # 1. 推荐实验分辨率
@@ -25,7 +25,7 @@ def main():
 
     image_sizes = [
         512,
-        768,
+        640,
         1152
     ]
 
@@ -50,10 +50,10 @@ def main():
 
         # 自动适配 batch
         if imgsz <= 512:
-            batch_size = 16
+            batch_size = 4
 
         elif imgsz <= 768:
-            batch_size = 8
+            batch_size = 4
 
         else:
             batch_size = 4

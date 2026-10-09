@@ -20,7 +20,7 @@ The framework is built on a modified Ultralytics YOLO implementation and uses a 
 ## 3. Repository Structure
 
 - `SAMD-YOLO/sam_net/ultralytics/` — Modified Ultralytics framework and model implementation.
-- `SAMD-YOLO/scripts/final_train.py` — Final training entry point.
+- `SAMD-YOLO/scripts/final_train.py` — Final entry script for multi-resolution training.
 - `SAMD-YOLO/scripts/train_mtl.py` — Multi-task training script.
 - `SAMD-YOLO/scripts/val_final.py` — Validation script.
 - `SAMD-YOLO/scripts/models/train_ResNeSt50_UNet_final.py` — Segmentation teacher training script.
