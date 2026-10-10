@@ -222,9 +222,11 @@ class v8DetectionLoss:
         L_seg_soft = F.kl_div(log_probs, soft_mask_down, reduction='mean') * 10.0
 
         # ---------------------------------------------------------
-        # 流 2: 真正的最终答案 —— 频域空间余弦蒸馏 (F-CSD)
-        # 1. 频域解耦：豁免高频锈迹 (xiu)
-        # 2. 空间余弦：豁免低频垫伤 (ds)，彻底抛弃 MSE！
+        # 流 2: 真正的最终答案 —— 频域空间余弦蒸馏 (LF-SCD)
+        # ---------------------------------------------------------
+        # 1. Extract low-frequency spatial features using average pooling.
+        # 2. Align teacher and student features through spatial cosine similarity.
+        # 3. Avoid direct feature-magnitude matching with MSE.
         # ---------------------------------------------------------
         teacher_feat = batch['teacher_feat'].to(student_feat.device)
         teacher_feat_down = F.interpolate(teacher_feat, size=student_feat.shape[2:], mode='bilinear', align_corners=False)
